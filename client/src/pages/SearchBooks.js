@@ -75,10 +75,12 @@ const SearchBooks = () => {
     }
 
     try {
+      console.log(bookToSave);
       const response = await saveBook({
         variables: { body: bookToSave },
       });
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
+      console.log(response);
     } catch (err) {
       console.error(err);
     }
